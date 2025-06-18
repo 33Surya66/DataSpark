@@ -6,18 +6,72 @@
   html {
     font-family: system-ui, sans-serif;
   }
+  body {
+    @apply bg-background-light text-primary-900 transition-colors duration-300;
+  }
+  .dark body {
+    @apply text-white transition-colors duration-300;
+    background: linear-gradient(120deg, #0a0a23, #0c4a6e 40%, #0284c7 100%);
+    background-size: 200% 200%;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+  @keyframes blob1 {
+    0%, 100% { transform: scale(1) translateY(0) translateX(0); }
+    33% { transform: scale(1.1) translateY(-30px) translateX(40px); }
+    66% { transform: scale(0.95) translateY(20px) translateX(-30px); }
+  }
+  @keyframes blob2 {
+    0%, 100% { transform: scale(1) translateY(0) translateX(0); }
+    33% { transform: scale(1.08) translateY(30px) translateX(-40px); }
+    66% { transform: scale(0.92) translateY(-20px) translateX(30px); }
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+    @apply bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md shadow-primary-200 dark:shadow-dark-900;
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200 transition-colors duration-300;
+  }
+  
+  .dark .card {
+    @apply bg-transparent border-none shadow-none;
+    backdrop-filter: none;
   }
   
   .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-dark-700 text-primary-900 dark:text-white transition-colors duration-300;
+  }
+  
+  .dataspark-title {
+    @apply text-primary-500 dark:text-primary-200 font-bold;
+  }
+  
+  .dataspark-accent {
+    @apply text-green-500 dark:text-green-300 font-bold;
+  }
+  
+  .dark-gradient-bg {
+    background: linear-gradient(120deg, #0a0a23, #0c4a6e 40%, #0284c7 100%);
+    background-size: 200% 200%;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+  
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .fade-up {
+    @apply animate-fade-up;
+  }
+  
+  .animate-blob1 {
+    animation: blob1 16s ease-in-out infinite;
+  }
+  
+  .animate-blob2 {
+    animation: blob2 18s ease-in-out infinite;
   }
 }

@@ -1,8 +1,18 @@
 # DataSpark
 
+[![Status: In Development](https://img.shields.io/badge/status-in--development-blue)](README.md)
+
 **No-Code ML & Data Science Platform**
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 > **Tagline:** Build, Analyze, Predict – No Code Needed.
+>
+> **© 2025 Surya Chandra Prakash Ravi**
+
+---
+
+> **⚠️ This project is actively under development and not yet production ready. Features, APIs, and UI may change rapidly.**
 
 ---
 
